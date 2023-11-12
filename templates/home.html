@@ -5,13 +5,15 @@
 
 {% block content %}
 
+    <a href="{% url "feed:post" %}">Add a new post &rarr;</a>
+    <hr>
     {% for post in posts %}
-    
-        {{post.text}} <br>
-        {% thumbnail post.image "200x200" crop="center" as im  %}
-            <img src="{{im.url}}" alt="" width="{{im.width}}" height="{{im.height}}">
-        {% endthumbnail %}
-        
+        <a href="{% url "feed:detail" post.id %}" style="display: inline-block;">
+            {{post.text}} <br>
+            {% thumbnail post.image "200x200" crop="center" as im  %}
+                <img src="{{im.url}}" alt="" width="{{im.width}}" height="{{im.height}}">
+            {% endthumbnail %}
+        </a>
         <hr>
     
     {% endfor %}
