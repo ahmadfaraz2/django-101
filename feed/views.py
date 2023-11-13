@@ -1,5 +1,3 @@
-from typing import Any
-from django import http
 from django.views.generic import TemplateView, DetailView, FormView
 from django.contrib import messages
 
